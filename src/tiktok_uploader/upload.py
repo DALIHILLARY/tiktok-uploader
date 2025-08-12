@@ -766,6 +766,9 @@ def _post_video(driver: WebDriver) -> None:
     """
     logger.debug(green("Clicking the post button"))
 
+    driver.execute_script('document.querySelector("tiktok-cookie-banner").remove()')
+    driver.implicitly_wait(1)
+
     try:
         post = WebDriverWait(driver, config["uploading_wait"]).until(
             lambda d: (el := d.find_element(By.XPATH, config["selectors"]["upload"]["post"])) and
