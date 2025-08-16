@@ -263,7 +263,7 @@ def complete_upload_form(
         The path to the video to upload
     """
     _go_to_upload(driver)
-    #  _remove_cookies_window(driver)
+    _remove_cookies_window(driver)
 
     upload_complete_event = threading.Event()
 
